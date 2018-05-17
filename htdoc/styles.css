@@ -1,3 +1,6 @@
+body {
+    padding-top: 150px;
+}
 .internal-styles {
     background: blue;
     width: 400px;
