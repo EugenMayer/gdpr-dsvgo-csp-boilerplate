@@ -1,12 +1,13 @@
+// that is just an example, do whatever you like to set the cookie or remove it
+
 function gdpr_yes() {
     document.cookie = "CONSENT=i_confirmed_it";
     location.reload();
 }
 
-
 function gdpr_no() {
     console.log('Voted GDPR no - keeping restrictuions in place');
-    setCookie('CONSENT', 'false', 0)
+    document.cookie = 'CONSENT=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
 }
 
 function gdps_auto_hide_if_yes() {
