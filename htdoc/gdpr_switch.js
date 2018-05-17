@@ -2,13 +2,13 @@
 
 function gdpr_yes() {
     document.cookie = "CONSENT=i_confirmed_it";
-    location.reload();
+    location.reload(true);
 }
 
 function gdpr_no() {
     console.log('Voted GDPR no - keeping restrictuions in place');
     document.cookie = 'CONSENT=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
-    location.reload();
+    location.reload(true);
 }
 
 function gdps_auto_hide_if_yes() {
