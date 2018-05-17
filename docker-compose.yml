@@ -8,3 +8,9 @@ services:
       - ./htdoc:/usr/share/nginx/html:ro
     ports:
       - 80:80
+  prebiuld:
+    image: eugenmayer/gdpr-csp-nginx
+    build:
+      context: ./
+    ports:
+      - 10080:80

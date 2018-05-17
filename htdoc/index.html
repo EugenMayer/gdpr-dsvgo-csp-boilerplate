@@ -21,7 +21,7 @@
     <script src="internal-js.js"></script>
 </head>
 <body>
-<h1>Test Page for CSP based DSVGO consent enforcing</h1>
+<h1>Test Page for CSP based GDPR/DSVGO consent enforcing</h1>
 
 <div id="gdpr_message"> Are you ok with us working your data? <a href="javascript:gdpr_yes();">Yes</a><a href="javascript:gdpr_no();">No</a> </div>
 
@@ -96,6 +96,28 @@
 
 <!-- GDPR switch -->
 <script src="gdpr_switch.js"></script>
+</body>
+
+
+<hr>
+<h3>External Youtube :</h3>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/n5WJOncaHt4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+<hr>
+<h3>External Ajax :</h3>
+<p id="external-ajax-test">This text should be blue if extern AJAX could be executed</p>
+<script>
+    function reqListener () {
+        document.getElementById('external-ajax-test').style.color = "blue";
+    }
+
+    var oReq = new XMLHttpRequest();
+    oReq.addEventListener("load", reqListener);
+    oReq.open("GET", "https://enable-cors.org/");
+    oReq.send();
+</script>
+
+
 </body>
 
 </html>
