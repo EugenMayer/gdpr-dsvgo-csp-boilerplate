@@ -1,8 +1,46 @@
 <html>
 <head>
-
+    <link href="https://fonts.googleapis.com/css?family=Libre+Barcode+39" rel="stylesheet">
+    <link href="Pacifico-Regular.ttf" rel="stylesheet">
 </head>
 <body>
-Hi
+<h1>Test Page for CSP based DSVGO consent enforcing</h1>
+
+<h3>External Image:</h3>
+<p>
+<img src="https://images.pexels.com/photos/774847/pexels-photo-774847.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" width="80px" alt="blocked">
+</p>
+
+<h3>Internal Image:</h3>
+<p>
+<img src="local-picture.jpeg" width="80px">
+
+<hr>
+
+<h3>External Iframe:</h3>
+<p>
+    <iframe src="https://google.de" width="80px" alt="blocked"></iframe>
+</p>
+
+<h3>Internal Iframe:</h3>
+<p>
+    <iframe src="./local-iframe.html" width="80px"></iframe>
+</p>
+
+<hr>
+
+<h3>External Font (barcode):</h3>
+<p style="font-family: 'Libre Barcode 39', cursive;">
+    Some external font style - should look like a barcode if loaded or as normal text if blocked
+</p>
+
+
+
+<h3>Internal Font (very curved):</h3>
+<p style="font-family: 'Pacifico', cursive;">
+    Some external font style - should look very curved a barcode if loaded or as normal text if blocked
+</p>
+
+</p>
 </body>
 </html>
