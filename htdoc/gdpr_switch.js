@@ -8,6 +8,7 @@ function gdpr_yes() {
 function gdpr_no() {
     console.log('Voted GDPR no - keeping restrictuions in place');
     document.cookie = 'CONSENT=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+    location.reload();
 }
 
 function gdps_auto_hide_if_yes() {

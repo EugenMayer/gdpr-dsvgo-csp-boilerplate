@@ -26,9 +26,10 @@ Since its implemented on the reverse-proxy you can put it anywhere. All you need
 On you nginx you include this:
 
 ```
-location / {
+	location / {
+		# better use map here
 		if ($cookie_CONSENT != "i_confirmed_it") {
-			add_header X-Frame-Options SAMEORIGIN;
+			add_header Cache-Control: "no-cache, no-store, must-revalidate";
 			add_header X-Content-Type-Options nosniff;
 			add_header Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; font-src 'self' data: ";
 		}
