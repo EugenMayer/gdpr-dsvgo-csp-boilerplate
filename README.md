@@ -1,6 +1,12 @@
 ## WAT
 
-Implementation of a CSP based cookie switch to forbid loading ANY 3rd party resources without having the consent cookie set.
+To comply with some standards of th GDPR/ DSVGO you nede to block any 3rd party sources before you have the consent of the user.
+You can create platform/framework specific implementations and scan your website for those includes and ensure you never install a
+wordpress/drupal/joomla/typo3 whatever plugin, suddenly loading something again ... or
+
+You hard-enforce that using CSP headers platform independent.
+
+TLDR: Implementation of a CSP based cookie switch to forbid loading ANY 3rd party resources without having the consent cookie set.
 
 **This works for any website, any framework and is extremly simple, but yet very effective - no backend implementation needed** 
 
@@ -14,14 +20,19 @@ It will block anything:
  - any external form
  - any external js
  - any external CSS
+ - any ajax to external URLs
  
- That means, you are on the safe side until the user accepts your cookie.
+ That means, you are on the safe side until the user user gives his consent.
  
  **Online Demo:** http://gdpr.kontextwork.de
  
+ **This does not**:
+ Offer you legal text or a convinient way to displaying what you are going to use to the user - that is up to you.
+ Text, assets and convenience of informations is up to you.
+ 
  ## How can i use it for my website?
  
-Since its implemented on the reverse-proxy you can put it anywhere. All you need is this javascript for the message
+Since its implemented on the reverse-proxy you can put it anywhere and infront of anything. All you need is this javascript for the message
 
 On you nginx you include this:
 
@@ -45,7 +56,7 @@ function gdpr_yes() {
 function gdpr_no() {
     console.log('Voted GDPR no - keeping restrictuions in place');
     document.cookie = 'CONSENT=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
-    location.reload(true);
+    setTimeout(function(){ location.reload(true); }, 500);
 }
 ``` 
 
