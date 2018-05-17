@@ -1,7 +1,23 @@
 <html>
 <head>
+    <!-- External Styles -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- Internal Styles -->
+    <link href="/styles.css" rel="stylesheet" type="text/css">
+
+
+    <!-- External Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Libre+Barcode+39" rel="stylesheet">
+    <!-- Local Fonts -->
     <link href="/Pacifico-Regular.ttf" rel="stylesheet">
+
+    <!-- External Javascript -->
+    <script
+            src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+    <!-- Internal Javascript -->
+    <script src="internal-js.js"></script>
 </head>
 <body>
 <h1>Test Page for CSP based DSVGO consent enforcing</h1>
@@ -15,8 +31,9 @@
 <p>
 <img src="local-picture.jpeg" width="80px">
 
-<hr>
 
+
+<hr>
 <h3>External Iframe:</h3>
 <p>
     <iframe src="https://google.de" width="80px" alt="blocked"></iframe>
@@ -27,20 +44,49 @@
     <iframe src="./local-iframe.html" width="80px"></iframe>
 </p>
 
-<hr>
 
+
+
+<hr>
 <h3>External Font (barcode):</h3>
 <p style="font-family: 'Libre Barcode 39', Arial, cursive;">
     Some external font style - should look like a barcode if loaded or as normal text if blocked
 </p>
-
-
 
 <h3>Internal Font (very curved):</h3>
 <p style="font-family: 'Pacifico, Verdana', cursive, Arial;">
     Some external font style - should look very curved a barcode if loaded or as normal text if blocked
 </p>
 
-</p>
+
+
+<hr>
+<h3>External JS :</h3>
+<p id="external-js-test">This text should be red if external JS could be loaded</p>
+<script>
+        $('#external-js-test').css('color','red')
+</script>
+
+
+<h3>Interl Font:</h3>
+<p id="internal-js-test">This text should be blue if internal JS could be loaded</p>
+<script>
+    changeColor();
+</script>
+
+
+
+<hr>
+<h3>External StyleSheet :</h3>
+<button type="button" class="btn btn-danger">This button should be red and bootstrap styled if it could load external stylesheets</button>
+<script>
+    $('#external-js-test').css('color','red')
+</script>
+
+
+<h3>Internal Styles</h3>
+<div class="internal-styles">This box should have a blue background if local styles could be loaded</div>
+
 </body>
+
 </html>
