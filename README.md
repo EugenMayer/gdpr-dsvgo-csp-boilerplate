@@ -55,4 +55,7 @@ Now just visit the website, check all the tests like iframe, fonts, js, css and 
 
 ## How does it work
 
-It uses CSP headers on nginx:     
+It uses CSP headers on nginx: https://github.com/EugenMayer/gdpr-dsvgo-csp-boilerplate/blob/master/nginx/server.conf#L11
+It adds those headers to block any external content as long as the cookie `CONSENT` is not set to  `i_confirmed_it`.
+
+Thats it. 
