@@ -32,6 +32,8 @@ It will block anything:
  
  ## How can i use it for my website?
  
+ **Online Demo:** http://gdpr.kontextwork.de
+ 
 Since its implemented on the reverse-proxy you can put it anywhere and infront of anything. All you need is this javascript for the message
 
 On you nginx you include this:
@@ -71,6 +73,8 @@ You get it - its very simple, you can replace anything above with whay you like 
 **`CONSENT` to `i_confirmed_it` and reload the page to unblock the external content again**
  
 ## Usage / Test
+
+You cant use the **Online Demo:** http://gdpr.kontextwork.de
  
     docker-compose up
     
