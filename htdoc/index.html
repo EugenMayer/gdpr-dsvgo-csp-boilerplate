@@ -1,5 +1,6 @@
 <html>
 <head>
+
     <!-- External Styles -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <!-- Internal Styles -->
@@ -21,6 +22,12 @@
 </head>
 <body>
 <h1>Test Page for CSP based DSVGO consent enforcing</h1>
+
+<div id="gdpr_message"> Are you ok with us working your data? <a href="javascript:gdpr_yes();">Yes</a><a href="javascript:gdpr_no();">No</a> </div>
+
+
+
+
 
 <h3>External Image:</h3>
 <p>
@@ -87,6 +94,8 @@
 <h3>Internal Styles</h3>
 <div class="internal-styles">This box should have a blue background if local styles could be loaded</div>
 
+<!-- GDPR switch -->
+<script src="gdpr_switch.js"></script>
 </body>
 
 </html>

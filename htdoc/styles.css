@@ -4,3 +4,14 @@
     height: 50px;
     color: white;
 }
+
+#gdpr_message {
+    position: fixed;
+    top:0;
+    height:100px;
+    width: 100%;
+    background: red;
+    color: white;
+    text-align: center;
+    padding-top: 30px;
+}
