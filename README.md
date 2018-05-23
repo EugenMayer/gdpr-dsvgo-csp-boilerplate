@@ -10,17 +10,25 @@ TLDR: Implementation of a CSP based cookie switch to forbid loading ANY 3rd part
 
 **This works for any website, any framework and is extremly simple, but yet very effective - no backend implementation needed** 
 
-It will block anything:
+It will block anything (any domain not being the same domain as you website/platform):
 
  - Google Fonts
  - Recaptcha
  - any non local 3rd party domains like CDNs or similar
  - GA
- - any iframe
- - any external form
- - any external js
+ - any IFRAME
+ - any external FONTS
+ - any external JS
  - any external CSS
  - any ajax to external URLs
+ 
+ If will allow ( even without consent):
+ 
+ - any local CSS (local means same domain)
+ - any local JS
+ - any local AJAX
+ - any local FONTS
+ - any local ASSET(images, whatever)
  
  That means, you are on the safe side until the user user gives his consent.
  
