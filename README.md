@@ -10,6 +10,8 @@ TLDR: Implementation of a CSP based cookie switch to forbid loading ANY 3rd part
 
 **This works for any website, any framework and is extremly simple, but yet very effective - no backend implementation needed** 
 
+
+## index.html ( all blocking )
 It will block anything (any domain not being the same domain as you website/platform):
 
  - Google Fonts
@@ -32,7 +34,15 @@ It will block anything (any domain not being the same domain as you website/plat
  
  That means, you are on the safe side until the user user gives his consent.
  
- **Online Demo:** http://gdpr.kontextwork.de
+ ## index_gablockonly.html ( google analytics blocking / scripts blocking)
+ 
+ This examples just blocks loading google  analytics and no other assets. This makes it easier to make the usual tracking consent
+ check but without modifying your framework / plugins whatever, just using CSP
+ **Online Demo:**
+  
+  - http://gdpr.kontextwork.de/index.html
+  - http://gdpr.kontextwork.de/index_gablockonly.html
+ 
  
  **This does not**:
  Offer you legal text or a convinient way to displaying what you are going to use to the user - that is up to you.

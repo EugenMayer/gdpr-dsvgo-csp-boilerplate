@@ -7,10 +7,10 @@ services:
       - ./nginx/server.conf:/etc/nginx/conf.d/default.conf
       - ./htdoc:/usr/share/nginx/html:ro
     ports:
-      - 80:80
+      - 12080:80
   prebiuld:
     image: eugenmayer/gdpr-csp-nginx
     build:
       context: ./
     ports:
-      - 10080:80
+      - 13080:80
